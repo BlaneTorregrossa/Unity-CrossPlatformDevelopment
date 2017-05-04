@@ -63,8 +63,6 @@ public class Grid : MonoBehaviour
 
     void Start()
     {
-        Graph.x = 0;
-        Graph.y = 0;
         GenGraph();
         //DecideGoal();
     }
