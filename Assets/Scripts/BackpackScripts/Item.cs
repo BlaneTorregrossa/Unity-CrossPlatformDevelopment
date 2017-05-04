@@ -24,6 +24,8 @@ public class Item : MonoBehaviour
         public bool IsMelee;
         public int Damage;
         public float DamageReduction;
+        
+        
 
     }
 
