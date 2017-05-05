@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPos.x -= 1;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x == 5)
+            if(Player.transform.position.x == -5)
             {
                 PlayerPos.x += 1;
                 Player.transform.position = PlayerPos;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPos.x += 1f;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x == -5)
+            if(Player.transform.position.x == 5)
             {
                 PlayerPos.x -= 1;
                 Player.transform.position = PlayerPos;
