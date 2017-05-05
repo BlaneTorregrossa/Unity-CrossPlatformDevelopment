@@ -50,16 +50,7 @@ public class Grid : MonoBehaviour
     }
 
 
-    //public void DecideGoal()
-    //{
-    //    GoalPlacement = Random.Range(1, 4);
-    //    if (GoalPlacement == 1)
-    //        goal = new Vector2(0, 3);
-    //    if (GoalPlacement == 2)
-    //        goal = new Vector3(2, 1);
-    //    if (GoalPlacement == 3)
-    //        goal = new Vector3(4, 4);
-    //}
+   
 
     void Start()
     {
@@ -67,8 +58,4 @@ public class Grid : MonoBehaviour
         //DecideGoal();
     }
 
-    void Update()
-    {
-
-    }
 }

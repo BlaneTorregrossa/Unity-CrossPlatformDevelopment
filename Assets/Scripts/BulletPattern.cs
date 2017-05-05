@@ -8,6 +8,7 @@ public class BulletPattern : MonoBehaviour
     public GameObject Bullet;
     public GameObject BulletSpawner;
 
+    public Rigidbody rb;
     
 
 

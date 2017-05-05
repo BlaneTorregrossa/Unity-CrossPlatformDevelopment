@@ -7,53 +7,54 @@ public class PlayerController : MonoBehaviour
 
 
     public GameObject Player;
-    
+    public Rigidbody rb;
+
     private Vector3 PlayerPos;
     private Vector3 PreviousPosition;
 
     void Movement()
     {
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.W))
         {
-            PlayerPos.z += 1;
+            PlayerPos.z += 0.1f;
             Player.transform.position = PlayerPos;
-            if (Player.transform.position.z == 5)
+            if (Player.transform.position.z >= 4.3f)
             {
-                PlayerPos.z -= 1;
+                PlayerPos.z -= 0.1f;
                 Player.transform.position = PlayerPos;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKey(KeyCode.S))
         {
-            PlayerPos.z -= 1;
+            PlayerPos.z -= 0.1f;
             Player.transform.position = PlayerPos;
-            if (Player.transform.position.z == -5)
+            if (Player.transform.position.z <= -4.3f)
             {
-                PlayerPos.z += 1;
+                PlayerPos.z += 0.1f;
                 Player.transform.position = PlayerPos;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A))
         {
-            PlayerPos.x -= 1;
+            PlayerPos.x -= 0.1f;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x == -5)
+            if(Player.transform.position.x <= -4.3f)
             {
-                PlayerPos.x += 1;
+                PlayerPos.x += 0.1f;
                 Player.transform.position = PlayerPos;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D))
         {
-            PlayerPos.x += 1f;
+            PlayerPos.x += 0.1f;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x == 5)
+            if(Player.transform.position.x >= 4.3f)
             {
-                PlayerPos.x -= 1;
+                PlayerPos.x -= 0.1f;
                 Player.transform.position = PlayerPos;
             }
         }
