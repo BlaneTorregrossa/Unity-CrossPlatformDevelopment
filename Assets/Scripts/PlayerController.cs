@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 PlayerPos;
     private Vector3 PreviousPosition;
+    private bool ItemColliding = false;
+
 
     void Movement()
     {
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPos.x -= 0.1f;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x <= -4.3f)
+            if (Player.transform.position.x <= -4.3f)
             {
                 PlayerPos.x += 0.1f;
                 Player.transform.position = PlayerPos;
@@ -52,7 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPos.x += 0.1f;
             Player.transform.position = PlayerPos;
-            if(Player.transform.position.x >= 4.3f)
+            if (Player.transform.position.x >= 4.3f)
             {
                 PlayerPos.x -= 0.1f;
                 Player.transform.position = PlayerPos;
@@ -60,15 +63,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Sheild"))
+        {
+            ItemColliding = true;
+            other.gameObject.SetActive(false);
+        }
+        else
+        {
+            ItemColliding = false;
+        }
+    }
 
-	void Start ()
+
+
+    void Start()
     {
         PlayerPos = Player.transform.position;
     }
-	
-	void Update ()
+
+    void Update()
     {
         Movement();
         PreviousPosition = Player.transform.position;
-	}
+    }
 }
